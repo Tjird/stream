@@ -9,22 +9,14 @@
     <div id="player"></div>
 
     <script>
-let webrtcSources = OvenPlayer.generateWebrtcUrls([
-                {
-                     host : 'ws://host:port',
-                     application : 'app',
-                     stream : "stream_1080",
-                     label : "WebRTC 1080P"
-                },
-                {
-                     host : 'ws://host:port',
-                     application : 'app',
-                     stream : "stream_480",
-                     label : "WebRTC 480P"
-                 }
-            ];);
-            let player = OvenPlayer.create("player_id", {
-    sources: webrtcSources
+let player = OvenPlayer.create("player", {
+    sources: [
+  {
+    "file": "ws://rancher.tjird.nl:3333/app/stream",
+    "label": "webrtc-0",
+    "type": "webrtc"
+  }
+]
 });
       player.on("error", function(error){
         console.log(error);
