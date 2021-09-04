@@ -13,8 +13,13 @@ let player = OvenPlayer.create("player", {
     sources: [
   {
     "file": "wss://streamto.tjird.nl:3334/app/stream",
-    "label": "1080p60",
+    "label": "1080p60 Sub-Second",
     "type": "webrtc"
+  },
+  {
+    "file": "https://streamto.tjird.nl:443/app/stream/manifest.mpd",
+    "label": "1080p60 Dash",
+    "type": "dash"
   }
 ]
 });
